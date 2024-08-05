@@ -1,0 +1,82 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Levantar Bitácora</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Levantar Bitácora</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <mat-stepper orientation="vertical">
+    <mat-step>
+      <ng-template matStepLabel>Seleccionar Alumno</ng-template>
+      <ng-template matStepContent>
+        
+          <ion-label>Alumno</ion-label>
+          <ngx-select-dropdown 
+          [config]="config" 
+          [options]="alumnos" 
+          [(ngModel)]="selectedAlumno" 
+          appendTo="body"
+          [multiple]="false"
+          class="ngx-select-dropdown"
+          placeholder="Selecciona un alumno">
+        </ngx-select-dropdown>
+      <ion-item>
+        <button mat-button matStepperNext>Siguiente</button>
+      </ion-item>
+      </ng-template>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Seleccionar Prefecto</ng-template>
+      <ng-template matStepContent>
+        <ion-item>
+            <ion-label position="floating">Prefecto</ion-label>
+            <ion-input [(ngModel)]="nombreUsuario" type="text" disabled></ion-input>
+        </ion-item>
+        <button mat-button matStepperPrevious>Atras</button>
+        <button mat-button matStepperNext>Siguiente</button>
+      </ng-template>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Detalles de la Bitácora</ng-template>
+      <ng-template matStepContent>
+        <ion-item>
+          <ion-label position="floating">Día</ion-label>
+          <ion-input [(ngModel)]="dia_bitacora" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating"> Hora</ion-label>
+          <ion-input [(ngModel)]="hora_bitacora" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Mes</ion-label>
+          <ion-input [(ngModel)]="mes_bitacora" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Año</ion-label>
+          <ion-input [(ngModel)]="anio" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Incidencia</ion-label>
+          <ion-textarea [(ngModel)]="insidencia"></ion-textarea>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Evidencia</ion-label>
+          <img *ngIf="evidencia_img" [src]="'data:image/jpeg;base64,' + evidencia_img" style="max-width: 100%; height: auto;">
+          <ion-button (click)="tomarFoto()">Tomar Foto</ion-button>
+        </ion-item>
+        
+        <button mat-button matStepperPrevious>Atras</button>
+        <button mat-button (click)="submitForm()">Guardar</button>
+      </ng-template>
+    </mat-step>
+  </mat-stepper>
+</ion-content>

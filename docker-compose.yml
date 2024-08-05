@@ -1,0 +1,8 @@
+version: '3'
+services:
+  app:
+    build:
+      context: ./esbaoIonicAppV2-main
+      dockerfile: Dockerfile
+    ports:
+      - '80:80'

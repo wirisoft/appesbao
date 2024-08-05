@@ -1,0 +1,12 @@
+ion-tab-bar {
+    //Rock Blue
+    --background: #9fc0d1;
+  }
+  
+  ion-tab-bar ion-tab-button.tab-selected {
+    background: #cad7e2;
+    border-radius: 50px; /* Makes the background oval */
+    margin: 5px; /* Adds some margin for better appearance */
+    padding: 3px 5px; /* Adjust padding as needed */
+  }
+  

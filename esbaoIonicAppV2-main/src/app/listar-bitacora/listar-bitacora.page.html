@@ -1,0 +1,70 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Lista de bitacora</ion-title>
+  </ion-toolbar>
+  <ion-searchbar [debounce]="1000" (ionChange)="buscar($event)"></ion-searchbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">listar-bitacora</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <ion-item *ngFor="let bitacora of bitacoras | filtro: TextoBuscarB: 'insidencia', 'alumno?.nombre_alumno' ">
+      
+      <ion-card>
+        <ion-card-header>
+          <ion-toolbar>
+            <ion-card-title>Detalles de la Bitácora</ion-card-title>
+            <ion-buttons slot="end">
+              <ion-button fill="clear" (click)="editarBitacora(bitacora)">
+                <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+              </ion-button>
+              <ion-button fill="clear" (click)="confirmarEliminarBitacora(bitacora.id)">
+                <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+              </ion-button>
+            </ion-buttons>
+      
+          </ion-toolbar>
+        </ion-card-header>
+        <ion-card-content>
+          <p><strong>Día:</strong> {{ bitacora.dia_bitacora }}</p>
+          <p><strong>Hora:</strong> {{ bitacora.hora_bitacora }}</p>
+          <p><strong>Mes:</strong> {{ bitacora.mes_bitacora }}</p>
+          <p><strong>Año:</strong> {{ bitacora.anio }}</p>
+          <p><strong>Insidencia:</strong> {{ bitacora.insidencia }}</p>
+           <!-- Mostrar la imagen convertida -->
+          <img [src]="bitacora.evidencia_img | base64ToUrl" *ngIf="bitacora.evidencia_img" />
+
+          <ion-item-divider></ion-item-divider>
+          <p><strong>Alumno:</strong></p>
+          <p>Nombre: {{ bitacora.alumno?.nombre_alumno }}</p>
+          <p>Primer Apellido: {{ bitacora.alumno?.primer_apellido }}</p>
+          <p>Segundo Apellido: {{ bitacora.alumno?.segundo_apellido }}</p>
+          
+          <p>Grado: {{ bitacora.alumno?.grado }}</p>
+          <p>Grupo: {{ bitacora.alumno?.grupo }}</p>
+          <p>Matrícula: {{ bitacora.alumno?.matricula }}</p>
+          <p>Área de especialidad: {{ bitacora.alumno?.area_especialidad }}</p>
+          <p>Teléfono del alumno: {{ bitacora.alumno?.telefono_alumno }}</p>
+
+          <ion-item-divider></ion-item-divider>
+          <p><strong>Prefecto:</strong></p>
+          <p>Nombre: {{ bitacora.user?.nombre_usuario }}</p>
+          <p>Apellido: {{ bitacora.user?.apellido }}</p>
+
+          <ion-button expand="full" color="primary" (click)="generarPdf(bitacora.id)">
+            Generar PDF
+          </ion-button>
+
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+</ion-content>

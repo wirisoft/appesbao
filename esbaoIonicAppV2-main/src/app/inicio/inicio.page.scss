@@ -1,0 +1,64 @@
+ion-content {
+    --ion-background-color: #cad7e2; /* Botticelli */
+  }
+  
+  .center-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .gradient-header {
+    background: linear-gradient(to right, #0f2f57, #3a5a73); /* Blue Zodiac, San Juan */
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Ensure content is centered horizontally */
+  }
+  
+  .icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #648ba6; /* Hoki */
+    overflow: hidden;
+    margin-bottom: 20px; /* Adjust spacing as needed */
+  }
+  
+  .logo {
+    width: 80px; /* Adjust size as needed */
+    height: 80px; /* Adjust size as needed */
+    object-fit: cover;
+    transform: scale(1.7); /* Slight zoom effect */
+  }
+  
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .buttons-container {
+    margin-top: 30px;
+  }
+  
+  ion-button {
+    --background: #648ba6; /* Hoki */
+    --color: #fff;
+    margin: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  ion-button:hover {
+    --background: #9fc0d1; /* Rock Blue */
+  }
+  

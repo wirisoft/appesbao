@@ -1,0 +1,18 @@
+ion-content {
+    --ion-background-color: #f0f8ff;
+    position: relative;
+  }
+
+  .center-title {
+    text-align: center;
+  }
+  
+  .center-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .uppercase {
+    text-transform: uppercase;
+  }

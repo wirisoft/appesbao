@@ -1,0 +1,44 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>ESBAO</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="abstract-background">
+    <div class="center-content">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>ESBAO</ion-card-title>
+          <ion-card-subtitle>Aplicación de gestión de reportes y bitácoras</ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+    </div>
+  </div>
+
+  <div class="below-content">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <ion-button class="topic-card" (click)="iniciarLevantamientoCitatorio()">
+            <ion-card-content>
+              <ion-icon name="calendar-outline"></ion-icon>
+              <p>Levantar Citatorio</p>
+            </ion-card-content>
+          </ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button class="topic-card" (click)="iniciarLevantamientoBitacora()">
+            <ion-card-content>
+              <ion-icon name="create-outline"></ion-icon>
+              <p>Levantar Bitácora</p>
+            </ion-card-content>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

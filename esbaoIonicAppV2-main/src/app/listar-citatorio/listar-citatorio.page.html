@@ -1,0 +1,72 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Lista de citatorios</ion-title>
+  </ion-toolbar>
+  <ion-searchbar [debounce]="1000" (ionChange)="buscar($event)"></ion-searchbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">listar-citatorio</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <ion-item *ngFor="let citatorio of citatorios | filtro: textoBuscarC: 'nombre_citatorio', 'nombre_alumno'">
+      
+      <ion-card>
+        <ion-card-header>
+          <ion-toolbar>
+            <ion-card-title>Detalles del Citatorio</ion-card-title>
+            <ion-buttons slot="end">
+              <ion-button fill="clear" (click)="editarCitatorio(citatorio)">
+                <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+              </ion-button>
+              <ion-button fill="clear" (click)="confirmarEliminarCitatorio(citatorio.id)">
+                <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+              </ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-card-header>
+        <ion-card-content>
+          <p><strong>Nombre del citatorio:</strong> {{ citatorio.nombre_citatorio }}</p>
+          <p><strong>Asunto:</strong> {{ citatorio.asunto }}</p>
+          <p><strong>Dia del citatorio:</strong> {{ citatorio.dia_citatorio }}</p>
+          <p><strong>Mes del citatorio:</strong> {{ citatorio.mes_citatorio }}</p>
+          <p><strong>Año del citatorio:</strong> {{ citatorio.ano_citatorio }}</p>
+
+          <p><strong>Hora del citatorio:</strong> {{ citatorio.hora_citatorio }}</p>
+          <p><strong>Fecha del citatorio:</strong> {{ citatorio.fecha_citatorio }}</p>
+          <p><strong>Departamento:</strong> {{ citatorio.departamento }}</p>
+
+          <ion-item-divider></ion-item-divider>
+          <p><strong>Alumno:</strong></p>
+          <p>Nombre: {{ citatorio.alumno?.nombre_alumno }}</p>
+          <p>Primer Apellido: {{ citatorio.alumno?.primer_apellido }}</p>
+          <p>Segundo Apellido: {{ citatorio.alumno?.segundo_apellido }}</p>
+          <p>Grado: {{ citatorio.alumno?.grado }}</p>
+          <p>Grupo: {{ citatorio.alumno?.grupo }}</p>
+          <p>Matrícula: {{ citatorio.alumno?.matricula }}</p>
+          <p>Área de especialidad: {{ citatorio.alumno?.area_especialidad }}</p>
+          <p>Teléfono del alumno: {{ citatorio.alumno?.telefono_alumno }}</p>
+
+
+          <ion-item-divider></ion-item-divider>
+          <p><strong>Tutor:</strong></p>
+          <p>Nombre: {{ citatorio.tutor?.nombre_tutor }}</p>
+          <p>Tipo de Tutor: {{ citatorio.tutor?.tipo_tutor }}</p>
+          <p>Telefono: {{citatorio.tutor?.telefono_tutor}}</p>
+          <p>Correo electronico: {{citatorio.tutor?.email_tutor}}</p>
+
+          <ion-button expand="full" color="primary" (click)="generarPdf(citatorio.id)">
+            Generar PDF
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,39 @@
+ion-content {
+  --ion-background-color: #f0f8ff; /* Blue Chalk */
+  position: relative;
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.menu-item {
+  --background: #648ba6; /* Blue Zodiac */
+  --color: #fff; /* Texto blanco */
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: none; /* Sin bordes */
+}
+
+.menu-item:hover {
+  --background: #9fc0d1; /* Rock Blue */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 14px;
+  color: #666;
+}

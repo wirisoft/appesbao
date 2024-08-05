@@ -1,0 +1,14 @@
+.custom-button {
+  border: none;
+  color: black;
+  padding: 14px 28px;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: white; /* Default background color */
+  border: 3px solid #0f2f57; /* Border color */
+  
+  &:hover {
+    background-color: #0f2f57; /* Hover background color */
+    color: white; /* Hover text color */
+  }
+}

@@ -1,0 +1,76 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Agregar Alumno</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Agregar Alumno</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <!-- Campos del Alumno -->
+    <ion-item>
+      <ion-label position="floating">Nombre del Alumno</ion-label>
+      <ion-input [(ngModel)]="nombre_alumno" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Primer Apellido</ion-label>
+      <ion-input [(ngModel)]="primer_apellido" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Segundo Apellido</ion-label>
+      <ion-input [(ngModel)]="segundo_apellido" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Turno</ion-label>
+      <ion-input [(ngModel)]="turno" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Grado</ion-label>
+      <ion-input [(ngModel)]="grado" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Grupo</ion-label>
+      <ion-input [(ngModel)]="grupo" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Matrícula</ion-label>
+      <ion-input [(ngModel)]="matricula" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Área de Especialidad</ion-label>
+      <ion-input [(ngModel)]="area_especialidad" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Teléfono</ion-label>
+      <ion-input [(ngModel)]="telefono" type="text"></ion-input>
+    </ion-item>
+
+    <!-- Campos del Tutor -->
+    <ion-item>
+      <ion-label position="floating">Nombre del Tutor</ion-label>
+      <ion-input [(ngModel)]="nombre_tutor" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Tipo de Tutor</ion-label>
+      <ion-input [(ngModel)]="tipo_tutor" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Teléfono del Tutor</ion-label>
+      <ion-input [(ngModel)]="telefono_tutor" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Email del Tutor</ion-label>
+      <ion-input [(ngModel)]="email_tutor" type="email"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="full" (click)="submitForm()">Agregar Alumno</ion-button>
+</ion-content>

@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/listar-bitacora"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Editar Bitácora</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <form (ngSubmit)="onSubmit()" *ngIf="bitacora">
+    <ion-item>
+      <ion-label position="floating">Día</ion-label>
+      <ion-input type="number" [(ngModel)]="bitacora.dia_bitacora" name="dia_bitacora" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Hora</ion-label>
+      <ion-input type="time" [(ngModel)]="bitacora.hora_bitacora" name="hora_bitacora" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Mes</ion-label>
+      <ion-input type="text" [(ngModel)]="bitacora.mes_bitacora" name="mes_bitacora" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Año</ion-label>
+      <ion-input type="number" [(ngModel)]="bitacora.anio" name="anio" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Incidencia</ion-label>
+      <ion-textarea [(ngModel)]="bitacora.insidencia" name="insidencia" required></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Evidencia (imagen)</ion-label>
+      <ion-input type="file" (change)="onFileChange($event)" accept="image/*"></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" type="submit" class="ion-margin-top">Guardar Cambios</ion-button>
+  </form>
+</ion-content>

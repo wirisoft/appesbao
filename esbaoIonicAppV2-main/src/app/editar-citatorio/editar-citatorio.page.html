@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/listar-citatorio"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Editar Citatorio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <form (ngSubmit)="onSubmit()" *ngIf="citatorio">
+    <ion-item>
+      <ion-label position="floating">Nombre del citado</ion-label>
+      <ion-input type="text" [(ngModel)]="citatorio.nombre_citatorio" name="nombre_citatorio" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Asunto</ion-label>
+      <ion-input type="text" [(ngModel)]="citatorio.asunto" name="asunto" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Dia</ion-label>
+      <ion-input type="number" [(ngModel)]="citatorio.dia_citatorio" name="dia_bitacora" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Mes</ion-label>
+      <ion-input type="text" [(ngModel)]="citatorio.mes_citatorio" name="mes_citatorio" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Año</ion-label>
+      <ion-input type="number" [(ngModel)]="citatorio.ano_citatorio" name="ano_citatorio" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Hora</ion-label>
+      <ion-input type="time" [(ngModel)]="citatorio.hora_citatorio" name="hora_citatorio" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Fecha</ion-label>
+      <ion-input type="DATETIME" [(ngModel)]="citatorio.fecha_citatorio" name="fecha_citatorio" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Departamento</ion-label>
+      <ion-input type="text" [(ngModel)]="citatorio.departamento" name="departamento" required></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" type="submit" class="ion-margin-top">Guardar Cambios</ion-button>
+
+  </form>
+</ion-content>

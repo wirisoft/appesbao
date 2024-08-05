@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Cuenta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-card *ngIf="user">
+      <ion-card-header class="uppercase">
+        <ion-card-title class="center-title" >{{ user.nombre_usuario }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Nombre:</p>
+        <p>{{ user.nombre_usuario }}</p>
+        
+        <p>Apellido:</p>
+        <p>{{user.apellido}}</p>
+        <p>Correo Electronico:</p>
+        <p>{{ user.email }}</p>
+        <!-- <p>Password: {{ user.password }}</p> -->
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+  <ion-row>
+    <ion-col>
+      <ion-button (click)="presentAlertConfirm()" color="danger" class="center-button">Cerrar Sesión</ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-alert
+    
+    header="Editar Información"
+  ></ion-alert>
+</ion-content>

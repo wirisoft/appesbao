@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Inicio de Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content mode="ios" [fullscreen]="true">
+  <div class="login-setction ion-padding">
+    <div class="heading ion-padding">
+      <h1>Bienvenidos a la administración de ESBAO</h1>
+      <p>Inicia sesión</p>
+    </div>
+    <div class="login-form ion-padding">
+      <form [formGroup]="formulario" (ngSubmit)="login()">
+        <div class="form-input">
+          <ion-icon name="mail-outline"></ion-icon>
+          <ion-item>
+            <ion-label position="floating">Correo Electrónico</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+        </div>
+        <div class="form-input">
+          <ion-icon name="lock-closed-outline"></ion-icon>
+          <ion-item>
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+        </div>
+        <div class="action-button ion-padding">
+          <ion-button size="large" class="login-button" type="submit" [disabled]="!formulario.valid">Iniciar sesión</ion-button>
+          <!-- <p>No tienes cuenta?</p>
+          <ion-button class="signup-button" size="large" fill="outline" routerLink="/registro">Registrarte</ion-button> -->
+        </div>
+      </form>
+    </div>
+  </div>
+</ion-content>

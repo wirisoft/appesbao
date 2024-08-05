@@ -1,0 +1,31 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Alumnos</ion-title>
+  </ion-toolbar>
+  <ion-searchbar [debounce]="1000" (ionChange)="buscar($event)"></ion-searchbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Listar Alumnos</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <ion-item *ngFor="let alumno of alumnos | filtro: textoBuscar: 'nombre_alumno'" (click)="seleccionarAlumno(alumno)">
+      <ion-label>
+        <h2>{{ alumno.nombre_alumno }} {{ alumno.primer_apellido }} {{ alumno.segundo_apellido }}</h2>
+        <p>Turno: {{ alumno.turno }}</p>
+        <p>Grado: {{ alumno.grado }}</p>
+        <p>Grupo: {{ alumno.grupo }}</p>
+        <p>Matrícula: {{ alumno.matricula }}</p>
+        <p>Área de Especialidad: {{ alumno.area_especialidad }}</p>
+        <p>Teléfono: {{ alumno.telefono }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
