@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">vps-4243804-x.dattaweb.com</domain>
+        <domain includeSubdomains="true">200.58.106.203</domain>
+    </domain-config>
+</network-security-config>
